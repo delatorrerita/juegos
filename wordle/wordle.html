@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      * {
+         margin: 0;
+         padding: 0;
+         font-family: Verdana, Geneva, Tahoma, sans-serif;
+         font-size: 16px;
+         text-align: center;
+      }
+      body {
+         margin: 0 auto;
+      }
+      h1 {
+         font-size: 2rem;
+         text-align: center;
+         margin: 3px 0;
+      }
+      h2 {
+         margin: 1em 0em
+      };
+
+      hr {
+         margin-bottom: 10px;
+      }      
+      span {
+         font-size: 2rem;
+         display: inline-block;
+         width: 2em;
+         height: 1.5em;
+         border: 1px solid #000;
+         margin: 5px 1px;
+         padding: 2px;
+      }
+      .enviada {
+         border: none;
+         color: white;
+         color: lig;
+      }
+      #pantalla {
+         margin: 0 auto;
+      }
+      .palabras p {
+         text-align: center;
+      }
+      #mensaje, #mensaje b {
+         text-align: center;
+         font-size: 2rem;
+      }
+
+      #teclas {
+         display: grid;
+         place-items: center;
+      }
+
+      .teclado {
+         display: grid;
+         place-items: stretch;
+         grid-template-columns: repeat(10, 5em);
+         gap: 5px;
+      }
+      .teclado button {
+         font-size: 1.2em;
+         min-width: 3rem;
+         padding: 3px 1px;
+         border-radius: 7px;
+      }
+
+   </style>
+   <title>WORDLE JS</title>
+</head>
+<body>
+   <h1>WORDLE JS (ES)</h1>
+   <hr>
+   <section id="pantalla">
+      <div class="palabras">
+         <p>
+            <span id="P1L1">&nbsp;</span>
+            <span id="P1L2">&nbsp;</span>
+            <span id="P1L3">&nbsp;</span>
+            <span id="P1L4">&nbsp;</span>
+            <span id="P1L5">&nbsp;</span>
+            <span id="P1" class="enviada">&radic;</span>
+         </p>
+         <p>
+            <span id="P2L1">&nbsp;</span>
+            <span id="P2L2">&nbsp;</span>
+            <span id="P2L3">&nbsp;</span>
+            <span id="P2L4">&nbsp;</span>
+            <span id="P2L5">&nbsp;</span>
+            <span id="P2" class="enviada">&radic;</span>
+         </p>
+         <p>
+            <span id="P3L1">&nbsp;</span>
+            <span id="P3L2">&nbsp;</span>
+            <span id="P3L3">&nbsp;</span>
+            <span id="P3L4">&nbsp;</span>
+            <span id="P3L5">&nbsp;</span>
+            <span id="P3" class="enviada">&radic;</span>
+         </p>
+         <p>
+            <span id="P4L1">&nbsp;</span>
+            <span id="P4L2">&nbsp;</span>
+            <span id="P4L3">&nbsp;</span>
+            <span id="P4L4">&nbsp;</span>
+            <span id="P4L5">&nbsp;</span>
+            <span id="P4" class="enviada">&radic;</span>
+         </p>
+         <p>
+            <span id="P5L1">&nbsp;</span>
+            <span id="P5L2">&nbsp;</span>
+            <span id="P5L3">&nbsp;</span>
+            <span id="P5L4">&nbsp;</span>
+            <span id="P5L5">&nbsp;</span>
+            <span id="P5" class="enviada">&radic;</span>
+         </p>
+         <p>
+            <span id="P6L1">&nbsp;</span>
+            <span id="P6L2">&nbsp;</span>
+            <span id="P6L3">&nbsp;</span>
+            <span id="P6L4">&nbsp;</span>
+            <span id="P6L5">&nbsp;</span>
+            <span id="P6" class="enviada">&radic;</span>
+         </p>
+         <p id="mensaje">&nbsp;</p>
+         <h2><a id="vinculo" target="_blank" href="https://dle.rae.es/">Definición RAE</a>
+            &nbsp;&nbsp; - &nbsp;&nbsp; <a target="_blank" 
+            href="https://www.mystilus.com/herramientas/analizador-morfosintactico">Morfosintaxis</a>
+         </h2>
+         
+      </div>
+   </section>
+   <section id="teclas"> 
+      <div class="teclado">
+         <button id="btnQ" onclick="enviaLetra('Q')">Q</button>
+         <button id="btnW" onclick="enviaLetra('W')">W</button>
+         <button id="btnE" onclick="enviaLetra('E')">E</button>
+         <button id="btnR" onclick="enviaLetra('R')">R</button>
+         <button id="btnT" onclick="enviaLetra('T')">T</button>
+         <button id="btnY" onclick="enviaLetra('Y')">Y</button>
+         <button id="btnU" onclick="enviaLetra('U')">U</button>
+         <button id="btnI" onclick="enviaLetra('I')">I</button>
+         <button id="btnO" onclick="enviaLetra('O')">O</button>
+         <button id="btnP" onclick="enviaLetra('P')">P</button>
+         <button id="btnA" onclick="enviaLetra('A')">A</button>
+         <button id="btnS" onclick="enviaLetra('S')">S</button>
+         <button id="btnD" onclick="enviaLetra('D')">D</button>
+         <button id="btnF" onclick="enviaLetra('F')">F</button>
+         <button id="btnG" onclick="enviaLetra('G')">G</button>
+         <button id="btnH" onclick="enviaLetra('H')">H</button>
+         <button id="btnJ" onclick="enviaLetra('J')">J</button>
+         <button id="btnK" onclick="enviaLetra('K')">K</button>
+         <button id="btnL" onclick="enviaLetra('L')">L</button>
+         <button id="btnÑ" onclick="enviaLetra('Ñ')">Ñ</button>
+         <button onclick="revisaPalabra()">Enviar</button>
+         <button id="btnZ" onclick="enviaLetra('Z')">Z</button>
+         <button id="btnX" onclick="enviaLetra('X')">X</button>
+         <button id="btnC" onclick="enviaLetra('C')">C</button>
+         <button id="btnV" onclick="enviaLetra('V')">V</button>
+         <button id="btnB" onclick="enviaLetra('B')">B</button>
+         <button id="btnN" onclick="enviaLetra('N')">N</button>
+         <button id="btnM" onclick="enviaLetra('M')">M</button>
+         <button onclick="borraLetra()">Borrar</button>
+      </div>
+   </section>
+   <script src="./palabras.js"></script>
+   <script src="./wordle.js"></script>
+</body>
+</html>

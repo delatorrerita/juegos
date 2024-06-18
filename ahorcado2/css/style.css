@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+body{
+    background-color:black;
+    color:white;
+    font-family: Verdana;
+}
+
+header{
+    height: 150px;
+    background-color:teal;
+}
+section{
+    height:550px;
+    background-image:url('../img/fondo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding:2rem;
+}
+/*footer {
+
+}*/
+
+.myletra{
+    padding:0.6rem;
+    width:45px;
+    height: 45px;
+    text-align: center;   
+    background-color:white;
+    border:1px solid red;
+    border-radius:12px;
+    margin-right:.7rem;
+    margin-bottom:1rem;
+    color:red;
+
+}
+.myletra:hover{
+    background-color:red;
+    color:white;
+    border:1px solid yellow;
+
+}
+
+#palabra {
+    font-size: 40px;
+    letter-spacing: 15px;
+}
+
+#letras{ 
+    margin-bottom:120px;
+}
+
+#rango{
+    width:100%;
+    display:flex;
+    flex-direction: row;
+    flex-wrap:nowrap;
+    justify-content:end;
+}
